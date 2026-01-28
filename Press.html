@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiara Nails - Galería Profesional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-fondo: #FFF1A8;
+      --color-principal: #C77DFF;
+      --color-oscuro: #5d16a1;
+      --blanco: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--color-fondo); color: #444; overflow-x: hidden; }
+
+    header { text-align: center; padding: 40px 20px; }
+    header img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--color-oscuro); }
+
+    .gallery-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+    /* FILA DE DISEÑO CON CARRUSEL DOBLE (FOTO + TEXTO) */
+    .nail-row {
+      display: flex;
+      background: var(--blanco);
+      margin-bottom: 50px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      height: 450px;
+    }
+
+    /* Contenedor del Carrusel (Lado Izquierdo) */
+    .slider-box {
+      flex: 1.2;
+      position: relative;
+      background: #fafafa;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+    .slider-box::-webkit-scrollbar { display: none; }
+
+    .slide-item {
+      min-width: 100%;
+      height: 100%;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 20px;
+    }
+
+    /* Contenedor de Textos (Lado Derecho) */
+    /* Usamos JS o CSS para que el usuario entienda que debe deslizar */
+    .content-box {
+      flex: 0.8;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid #f0f0f0;
+      position: relative;
+    }
+
+    .info-group {
+      display: none; /* Se controla con el scroll o simplemente ponemos el texto general */
+    }
+
+    /* Estilo para que se vea que es un grupo */
+    .nail-row:nth-child(even) { flex-direction: row-reverse; }
+
+    .swipe-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: var(--color-principal);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(-5px); }
+    }
+
+    .btn-atras {
+      display: inline-block; padding: 12px 35px; border: 2px solid var(--color-principal);
+      border-radius: 50px; color: var(--color-principal); text-decoration: none; font-weight: bold; margin: 20px 0;
+    }
+
+    .contact-card {
+      background: var(--color-oscuro); color: white; padding: 30px; text-align: center;
+      border-radius: 30px; margin: 40px auto; max-width: 500px;
+    }
+
+    .btn-ig {
+      display: inline-block; margin-top: 15px; background: #E1306C; color: white;
+      padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .nail-row { flex-direction: column; height: auto; }
+      .slider-box { height: 350px; }
+      .content-box { text-align: center; padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo 1.png" alt="Kiara Nails">
+  <h1>Press On</h1>
+  <p style="color: var(--color-principal)">Desliza las fotos para ver los diseños</p>
+</header>
+
+<div class="gallery-container">
+
+  <div class="nail-row">
+    <div class="slider-box">
+      <div class="slide-item" id="bla1">
+        <img src="BLA1.png" alt="Uñas Blancas 1">
+      </div>
+      <div class="slide-item" id="bla2">
+        <img src="BLA2.png" alt="Uñas Blancas 2">
+      </div>
+      <div class="slide-item" id="bla3">
+        <img src="BLA3.png" alt="Uñas Blancas 3">
+      </div>
+      <div class="swipe-badge">DESLIZA LAS FOTOS →</div>
+    </div>
+
+    <div class="content-box">
+      <h2>White Collection</h2>
+      <p style="margin-bottom: 15px;"><b>Diseño 1:</b> Blanco Clásico brillante.</p>
+      <p style="margin-bottom: 15px;"><b>Diseño 2:</b> Soft Pearl con destellos.</p>
+      <p><b>Diseño 3:</b> Pure Snow acabado mate.</p>
+      <small style="margin-top: 20px; color: var(--color-principal);">* Desliza la imagen para ver cada uno.</small>
+    </div>
+  </div>
+
+  <div class="nail-row">
+    <div class="slider-box">
+      <div class="slide-item">
+        <img src="VER1.png" alt="Uñas Verdes 1">
+      </div>
+      <div class="slide-item">
+        <img src="VER2.png" alt="Uñas Verdes 2">
+      </div>
+      <div class="swipe-badge">DESLIZA LAS FOTOS →</div>
+    </div>
+
+    <div class="content-box">
+      <h2>Nature Green</h2>
+      <p style="margin-bottom: 15px;"><b>Opción A:</b> Verde bosque profundo.</p>
+      <p><b>Opción B:</b> Verde Neón con arte lineal.</p>
+      <small style="margin-top: 20px; color: var(--color-principal);">Técnica: Semipermanente.</small>
+    </div>
+  </div>
+
+  <center>
+    <a href="prin1.html" class="btn-atras">Atrás</a>
+  </center>
+
+  <div class="contact-card">
+    <h3>¿Lista para agendar?</h3>
+    <a href="https://www.instagram.com/kdekiara.nails" class="btn-ig">Ir a Instagram</a>
+  </div>
+
+</div>
+
+<footer>
+  <p style="text-align: center; padding: 20px; opacity: 0.5; font-size: 0.8rem;">Kiara Nails &copy; 2026</p>
+</footer>
+
+</body>
+</html>

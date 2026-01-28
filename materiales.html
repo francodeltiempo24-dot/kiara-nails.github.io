@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Kiara Nails - Galería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#FFF1A8;color:#C77DFF;overflow-x:hidden;}
+header{text-align:center;padding:40px 20px;}
+header img{width:160px;height:160px;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,.2);margin-bottom:20px;object-fit:cover;}
+h1{font-size:3rem;}
+.subtitle{color:#b35cff;margin-top:10px;}
+
+/* ===== GALERIA ===== */
+.carousel-container{position:relative;width:100%;padding:60px 0;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.05));}
+
+.carousel-track{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+  padding:10px 60px;
+}
+
+.carousel-item{background:white;border-radius:25px;padding:14px;box-shadow:0 10px 25px rgba(0,0,0,.15);transition:.35s;cursor:pointer;}
+.carousel-item:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 18px 40px rgba(0,0,0,.25);}
+.carousel-item img{width:100%;height:360px;object-fit:cover;border-radius:20px;}
+.carousel-item b{display:block;margin-top:12px;font-size:1.1rem;color:#C77DFF;text-align:center;}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:999;}
+.modal img{max-width:90%;max-height:90%;border-radius:20px;}
+
+.container{text-align:center;margin:40px;}
+.btn-atras{background:#C77DFF;color:white;padding:15px 40px;border-radius:50px;text-decoration:none;box-shadow:0 5px 15px rgba(199,125,255,.4);}
+.btn-atras:hover{background:#b35cff;}
+
+/* ===== BOTON FLOTANTE IG ===== */
+.floating-ig{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+  color:white;
+  padding:16px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  z-index:9999;
+  transition:.3s;
+}
+.floating-ig:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="logo 1.png">
+<h1>K de Kiara Nails</h1>
+<span class="subtitle">Estos son mis materiales que utilizo 💅✨</span>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel-track" id="carousel">
+    <!-- Acá van tus fotos cuando quieras agregarlas -->
+  </div>
+</div>
+
+<div class="modal" id="modal"><img id="modalImg"></div>
+
+<div class="container">
+<a href="prin1.html" class="btn-atras">Atrás</a>
+</div>
+
+<a href="https://www.instagram.com/kdekiara.nails" target="_blank" class="floating-ig">
+💬 Reserva tu turno 
+</a>
+
+<script>
+const modal=document.getElementById('modal');
+const modalImg=document.getElementById('modalImg');
+modal.onclick=()=>modal.style.display='none';
+</script>
+
+</body>
+</html>

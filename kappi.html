@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiara Nails - Galería</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kiara Nails - Diseños de uñas personalizados hechos a mano.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #FFF1A8; 
+      color: #C77DFF; 
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      color: #b35cff;
+      margin-top: 10px;
+      text-align: center;
+      display: block;
+    }
+
+    /* ===== CARRUSEL INFINITO AUTOMÁTICO ===== */
+    .carousel-container {
+      width: 100%;
+      padding: 40px 0;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .carousel-track {
+      display: flex;
+      width: calc(320px * 8); 
+      animation: scroll 40s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-320px * 4)); } 
+    }
+
+    .carousel-item {
+      min-width: 300px;
+      margin: 0 10px;
+      background: white;
+      border-radius: 25px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .carousel-item b {
+      font-size: 1.2rem;
+      color: #C77DFF;
+      display: block;
+    }
+
+    /* ===== BOTÓN ATRÁS ESTILO VIOLETA ===== */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .btn-atras {
+      display: inline-block;
+      background-color: #C77DFF; /* El violeta de tu marca */
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(199, 125, 255, 0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-atras:hover {
+      background-color: #b35cff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(199, 125, 255, 0.6);
+    }
+
+    .btn-atras:active {
+      transform: translateY(-1px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: .7;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo 1.png" alt="Kiara Nails">
+  <h1>K de Kiara Nails</h1>
+  <span class="subtitle"> Mis últimos diseños 💅✨</span>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel-track">
+    <div class="carousel-item">
+      <img src="Kiara Frutilla 1.jpg" alt="Uñas Frutilla">
+      <b>Strawberry Pink</b>
+    </div>
+    <div class="carousel-item">
+      <img src="Kiara Frutilla 2.jpg" alt="Uñas Frutilla 2">
+      <b>Berry Sweet</b>
+    </div>
+    <div class="carousel-item">
+      <img src="Kiara Violeta 3.webp" alt="Uñas Violeta">
+      <b>Violet Dreams</b>
+    </div>
+    <div class="carousel-item">
+      <img src="Laura 1.jpg" alt="Uñas Laura">
+      <b>Laura Style</b>
+    </div>
+    <div class="carousel-item">
+      <img src="Laura 2.jpg" alt="Uñas Laura 2">
+      <b>Soft Lavender</b>
+    </div>
+    <div class="carousel-item">
+      <img src="Laura 3.jpg" alt="Uñas Laura 3">
+      <b>Classy Touch</b>
+    </div>
+  </div>
+</div>
+<style>
+  /* Estilo para el recuadro violeta */
+  .recuadro-violeta {
+    background-color: #8a2be2; /* Color violeta (BlueViolet) */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px solid #5d16a1; /* Un borde un poco más oscuro para dar profundidad */
+  }
+
+  /* Estilo para que el enlace parezca un botón dentro del recuadro */
+  .btn-contacto {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .btn-contacto:hover {
+    text-decoration: underline;
+  }
+style>
+  /* Estilo para el recuadro violeta */
+  .recuadro-violeta {
+    background-color: #8a2be2; /* Color violeta (BlueViolet) */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px solid #5d16a1; /* Un borde un poco más oscuro para dar profundidad */
+  }
+
+  /* Estilo para que el enlace parezca un botón dentro del recuadro */
+  .btn-contacto {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .btn-contacto:hover {
+    text-decoration: underline;
+  }
+</style>
+<style>
+  /* Estilo para el recuadro violeta */
+  .recuadro-violeta {
+    background-color: #8a2be2; /* Color violeta (BlueViolet) */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px solid #5d16a1; /* Un borde un poco más oscuro para dar profundidad */
+  }
+
+  /* Estilo para que el enlace parezca un botón dentro del recuadro */
+  .btn-contacto {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .btn-contacto:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="container">
+  <a href="prin1.html" class="btn-atras">Atrás</a>
+</div>
+
+<div class="recuadro-violeta">
+  <p style="color: white; margin-bottom: 10px;">¿Quieres hablarme al MD?</p>
+  <a href="https://www.instagram.com/kdekiara.nails" class="btn-contacto">Contáctame</a>
+</div>
+
+<footer>
+
+</body>
+</html>
