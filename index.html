@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiara Nails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kiara Nails - Diseños de uñas personalizados hechos a mano.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #FFF1A8;
+      color: #C77DFF;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header img {
+      width: 160px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      color: #b35cff;
+      margin-top: 10px;
+    }
+
+    /* ===== FORMAS ===== */
+    .shapes {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .shapes-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .shape-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .shape-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+    }
+
+    .shape-card img {
+      width: 100%;
+      height: 180px; /* tamaño uniforme */
+      object-fit: cover; /* mantiene proporción y recorta si es necesario */
+      border-radius: 15px;
+      margin-bottom: 12px;
+    }
+
+    .shape-card h3 {
+      font-size: 1.1rem;
+      color: #C77DFF;
+      margin-bottom: 6px;
+    }
+
+    .shape-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.3;
+    }
+
+    /* ================= */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform .3s;
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .card b {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .buy {
+      display: inline-block;
+      margin-top: 12px;
+      background: #C77DFF;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .buy:hover {
+      background: #a85bff;
+    }
+
+    /* ===== BOTÓN TUTORIAL ===== */
+    .tutorial-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #8a2be2; /* violeta sólido */
+      color: #ffffff; /* letras blancas */
+      padding: 8px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: .3s;
+    }
+
+    .tutorial-btn:hover {
+      background: #7a1adf; /* violeta más intenso */
+      color: #ffffff;
+    }
+    /* ================= */
+
+    .contact {
+      text-align: center;
+      margin: 80px 0 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: #C77DFF;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: .3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,.2);
+    }
+
+    .btn:hover {
+      background: #a85bff;
+    }
+
+    .why {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .why-grid div {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    }
+
+    /* ===== PALETA ===== */
+    .palette {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .palette p {
+      margin-top: 8px;
+    }
+
+    .palette-grid {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 15px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .palette-grid span {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,.2);
+      border: 2px solid white;
+      transition: transform .3s;
+    }
+
+    .palette-grid span:hover {
+      transform: scale(1.15);
+    }
+    /* ================= */
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: .7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width:600px){
+      h1{font-size:2.2rem;}
+      header img{width:130px;}
+      .card img{height:220px;}
+      .shape-card img{height:150px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo 1.png" alt="Kiara Nails">
+  <h1>K de Kiara Nails</h1>
+  <p class="subtitle"> 💅 Diseños únicos hechos a mano ✨</p>
+</header>
+
+<section class="shapes">
+  <h2>💅 Formas de uñas que realizo ✨</h2>
+  <p>Elegí el estilo que más va con vos.</p>
+
+  <div class="container">
+    <div class="shapes-grid">
+
+      <div class="shape-card">
+        <img src="Almendra.png" alt="Almendra">
+        <h3>Almendra</h3>
+        <p>Elegante y delicada. Estiliza los dedos y queda perfecta para diseños suaves o glam.</p>
+      </div>
+
+      <div class="shape-card">
+        <img src="Cuadrada.png" alt="Cuadrada">
+        <h3>Cuadrada</h3>
+        <p>Clásica y resistente. Ideal para quienes buscan comodidad sin perder estilo.</p>
+      </div>
+
+      <div class="shape-card">
+        <img src="Redonda.png" alt="Redonda">
+        <h3>Redonda</h3>
+        <p>Moderna y llamativa. Perfecta para diseños cargados y con brillo.</p>
+      </div>
+      <div class="shape-card">
+        <img src="Stiletto.png" alt="Stiletto">
+        <h3>Stiletto</h3>
+        <p>Audaz y sofisticada. Destaca muchísimo y es ideal para looks impactantes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<section class="cards">
+  <div class="card">
+    <img src="Norma Rama 1.webp">
+    <h3>Semi permamenente</h3>
+    <p>Elegante y delicado para todos los días.</p>
+     
+    <a href="semiper.html" class="buy">informacion</a>
+  </div>
+
+  <div class="card">
+    <img src="Kiara Frutilla 2.jpg">
+    <h3>kappiing Gel</h3>
+    <p>Elegante y delicado para todos los días.</p>
+     
+    <a href="kappi.html" class="buy">informacion</a>
+  </div>
+
+  <div class="card">
+    <img src="VER2.png">
+    <h3>Press On</h3>
+    <p>Elegante y delicado para todos los días.</p>
+     
+    <a href="Press.html" class="buy">informacion</a>
+  </div>
+</section>
+
+<section class="why">
+  <h2>¿Por qué elegir Kiara Nails? 💜</h2>
+  <div class="why-grid">
+    
+  <div>
+  <a href="diseños.html">
+    ✨ Diseños personalizados
+  </a>
+</div>
+    <div>
+  <a href="materiales.html">
+    💅 Materiales premium
+  </a>
+</div>
+
+   
+    <div>🚚 Entregas rápidas</div>
+    <div>💕 Atención personalizada</div>
+  </div>
+</section>
+
+<section class="palette">
+  <h2>🎨 Colores disponibles</h2>
+  <p>Elegí tu tono favorito para tu diseño.</p>
+
+  <div class="palette-grid">
+    <span style="background:#5a0f24" title="Cat Eye Glitter Bordo 44"></span>
+    <span style="background:red" title="Rojo"></span>
+    <span style="background:orange" title="Naranja"></span>
+    <span style="background:#ffb3a7" title="Naranja pastel"></span>
+    <span style="background:#fff200" title="Amarillo Flúor"></span>
+    <span style="background:#556b2f" title="Verde Oliva"></span>
+    <span style="background:#39ff14" title="Verde Flúor"></span>
+    <span style="background:#7fd7ff" title="Celeste"></span>
+    <span style="background:#005eff" title="Azúl"></span>
+    <span style="background:#7b3fa1" title="Violeta"></span>
+    <span style="background:#5a3825" title="Chocolate"></span>
+    <span style="background:#2ecc71" title="Verde"></span>
+    <span style="background:#ffd700" title="Amarillo"></span>
+    <span style="background:#c8a2c8" title="Lila"></span>
+    <span style="background:#ff1493" title="Fucsia"></span>
+    <span style="background:#f4c2c2" title="Rosa bebé"></span>
+    <span style="background:#ffffff" title="Vía Láctea Blanco"></span>
+    <span style="background:#f7c1d9" title="Vía Láctea Rosa"></span>
+    <span style="background:#f2d2c9" title="Rosa Nude 05"></span>
+    <span style="background:#f8f8f8" title="Blanco 32"></span>
+    <span style="background:#000000" title="Negro 31"></span>
+    <span style="background:#d4af37" title="Cat Eye Glitter Dorado 16"></span>
+  </div>
+
+  <p style="margin-top:20px;font-size:.9rem;">✨ Pasá el mouse por cada color para ver su nombre.</p>
+</section>
+
+<section class="contact">
+  <h2>Pedí el tuyo ✨</h2>
+  <p>Contactame por Instagram</p>
+
+  <div class="buttons">
+    <a href="https://www.insta    https://kiara-nails.github.iogram.com/kdekiara.nails" class="btn">Instagram</a>
+  </div>
+</section>
+
+<footer>
+© 2026 - Kiara Nails
+</footer>
+
+</body>
+</html>
